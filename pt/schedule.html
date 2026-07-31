@@ -1,0 +1,21 @@
+---
+layout: default
+lang: pt
+permalink: /pt/schedule.html
+alt_url: /schedule.html
+alt_lang: en
+alt_lang_key: en
+title: "Agenda | LESIS Trainings"
+description: "Todos os encontros agendados dos treinamentos LESIS, em ordem cronológica."
+keywords: "LESIS, agenda, datas de treinamento, calendário de workshops"
+---
+{% include i18n.html %}
+
+<section class="hero hero-sm">
+  <h1>{{ t.schedule.title }}</h1>
+  <p class="hero-lead">{{ t.schedule.lead }}</p>
+</section>
+
+<section class="section">
+  {% include schedule-table.html %}
+</section>

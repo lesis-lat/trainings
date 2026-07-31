@@ -1,0 +1,22 @@
+{% comment %}
+The "next cohort" band: first open course for this locale, with its first session date.
+{% endcomment %}
+{% assign open_courses = site.courses | where: "lang", lang | where: "status", "open" | sort: "ref" %}
+{% if open_courses.size > 0 %}
+{% assign next = open_courses | first %}
+{% assign first_session = next.sessions | first %}
+<section class="cohort">
+  <h2 class="label">{{ t.home.next_cohort }}</h2>
+  <div class="cohort-band">
+    <div class="cohort-date">
+      {% if first_session %}<span class="cohort-date-value">{{ first_session.date }}</span>{% endif %}
+      <span class="status status-open">{{ t.courses.status_open }}</span>
+    </div>
+    <div class="cohort-body">
+      <h3><a href="{{ next.url | relative_url }}">{{ next.heading }}</a></h3>
+      <p>{{ next.subtitle }}</p>
+    </div>
+    <a class="button" href="{{ next.url | relative_url }}">{{ t.courses.apply }} <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+{% endif %}

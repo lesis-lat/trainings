@@ -1,0 +1,14 @@
+{% if lang == 'pt' %}{% assign home_url = '/pt/' %}{% assign courses_url = '/pt/courses.html' %}
+{% else %}{% assign home_url = '/' %}{% assign courses_url = '/courses.html' %}{% endif %}
+<nav class="top-menu">
+  <ul>
+    <li><a href="{{ home_url | relative_url }}" class="ibm-plex-sans-regular{% if page.url == home_url %} active{% endif %}">{{ t.nav.home }}</a></li>
+    <li><a href="{{ courses_url | relative_url }}" class="ibm-plex-sans-regular{% if page.url contains 'courses' %} active{% endif %}">{{ t.nav.courses }}</a></li>
+    <li><a href="https://lesis.lat" class="ibm-plex-sans-regular">{{ t.nav.lesis }}</a></li>
+    <li><a href="https://platform.lesis.lat/app/login" target="_blank" rel="noopener noreferrer" class="ibm-plex-sans-regular">{{ t.nav.platform }}</a></li>
+    {% if page.alt_url %}
+    {% assign alt_lang = page.alt_lang_key | default: 'pt' %}
+    <li class="lang-switch"><a href="{{ page.alt_url | relative_url }}" class="ibm-plex-sans-regular" lang="{{ site.data.i18n[alt_lang].html_lang }}" aria-label="{{ site.data.i18n[alt_lang].name }}">{{ site.data.i18n[alt_lang].label }}</a></li>
+    {% endif %}
+  </ul>
+</nav>

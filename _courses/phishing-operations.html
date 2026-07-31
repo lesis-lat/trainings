@@ -1,0 +1,167 @@
+---
+layout: course
+lang: en
+ref: phishing-operations
+permalink: /courses/phishing-operations/
+alt_url: /pt/courses/phishing-operations/
+alt_lang: pt-BR
+alt_lang_key: pt
+status: soon
+
+title: "Phishing operations | LESIS Trainings"
+description: "A one-day intensive workshop on planning, running and measuring phishing campaigns in authorised engagements. Delivered in Portuguese (pt-BR)."
+keywords: "phishing, spear phishing, red team, social engineering, gophish, evilginx, clickfix, phishing campaign, training, LESIS"
+
+heading: "Phishing operations: from zero to one"
+subtitle: "A one-day intensive workshop on planning, running and measuring phishing campaigns in authorised engagements."
+
+meta:
+  - key: format
+    value: "Intensive workshop"
+  - key: language
+    value: "Portuguese (pt-BR)"
+  - key: duration
+    value: "6 hours, in a single day"
+  - key: dates
+    value: "21/11/2026, 1:00 PM to 7:30 PM"
+  - key: seats
+    value: "Minimum 5, maximum 10"
+  - key: price
+    value: "From R$ 500"
+
+pricing:
+  - "Pricing is tiered by order of confirmed registration. Each tier closes once its seats are taken, and the next one applies."
+pricing_note: "The cohort only runs once a minimum quorum of 5 participants is reached."
+refund_policy: true
+pricing_tiers:
+  - label: "Tier 1"
+    seats: "3 seats"
+    price: "R$ 500"
+  - label: "Tier 2"
+    seats: "5 seats"
+    price: "R$ 800"
+  - label: "Tier 3"
+    seats: "2 seats"
+    price: "R$ 900"
+
+outcomes:
+  - "Plan a campaign from reconnaissance of the target rather than from a ready-made template"
+  - "Collect and validate email addresses without alerting the organisation being tested"
+  - "Build and protect campaign infrastructure: domains, email authentication, landing pages and redirectors"
+  - "Run a complete campaign with GoPhish, from sending through to monitoring"
+  - "Build spear phishing pretexts and assess techniques that depend on user action"
+  - "Demonstrate the impact of 2FA bypass through session capture, within the limits of the scope"
+  - "Choose and interpret campaign metrics, and write a report that stands behind the decisions taken"
+
+audience:
+  - "Pentesters and red teamers"
+  - "Offensive security engineers"
+  - "Incident response analysts"
+  - "Teams that commission or assess phishing simulations"
+  - "Professionals running security awareness programs"
+
+sessions:
+  - title: "Single session"
+    date: "21/11/2026"
+    weekday: "Saturday"
+    time: "1:00 PM to 7:30 PM"
+    modules:
+      - title: "Fundamentals and engagement framing"
+        duration: "30min"
+        topics:
+          - "What phishing is, and how it differs from other social engineering techniques"
+          - "Anatomy of a campaign: pretext, vector and objective"
+          - "Real examples and what made each of them work"
+          - "Scope, formal authorisation and rules of engagement"
+      - title: "Target reconnaissance and address collection"
+        duration: "1h00"
+        topics:
+          - "The organisation's public surface: people, technologies and suppliers"
+          - "Internal language, processes and calendar as raw material for the pretext"
+          - "Identifying the email controls and the provider in use"
+          - "Address sources, corporate naming conventions and breach data"
+          - "Validating addresses without alerting the target"
+          - "How reconnaissance determines the approach, rather than the other way round"
+      - title: "Campaign infrastructure"
+        duration: "1h00"
+        topics:
+          - "Domain selection, aging and categorisation"
+          - "Lookalike domains and how a target actually reads them"
+          - "SPF, DKIM and DMARC from the sender's perspective"
+          - "Deliverability: why a message arrives, or does not"
+          - "Landing page hosting, TLS and redirectors"
+      - title: "Coffee break"
+        duration: "30min"
+        pause: true
+      - title: "Protecting the infrastructure"
+        duration: "30min"
+        topics:
+          - "Traffic filtering: who gets to see the landing page"
+          - "Evading crawlers, sandboxes and URL analysis services"
+          - "Separating sending from capture, and closing out the engagement"
+      - title: "Execution and delivery with GoPhish"
+        duration: "50min"
+        topics:
+          - "Modelling campaigns, templates and landing pages"
+          - "Instrumentation and event tracking"
+          - "Sending windows, pacing and segmentation"
+          - "Monitoring a campaign in flight"
+      - title: "Spear phishing, ClickFix and 2FA bypass"
+        duration: "1h00"
+        topics:
+          - "Spear phishing: a pretext tailored from the reconnaissance"
+          - "ClickFix and techniques that depend on user action"
+          - "Evilginx: reverse proxy and session capture"
+          - "What 2FA bypass changes in the organisation's threat model"
+      - title: "Impact, metrics and reporting"
+        duration: "40min"
+        topics:
+          - "Demonstrating impact within the limits of the scope"
+          - "Delivery, click, submission and session metrics — and what each one actually says"
+          - "Report rate and what it reveals about the organisation"
+          - "Report structure: narrative, evidence and debrief"
+      - title: "Integrative exercise"
+        duration: "30min"
+        topics:
+          - "An end-to-end campaign in a controlled environment"
+          - "Discussion of the decisions taken and the alternatives discarded"
+
+methodology:
+  - "Concepts presented through real campaigns from industry"
+  - "Hands-on demonstrations of building and protecting infrastructure"
+  - "Guided discussions on scope, authorisation and the limits of an engagement"
+  - "Analysis of what made real campaigns work or fail"
+  - "Final end-to-end practical exercise"
+
+materials:
+  - "Slides"
+  - "Workbook"
+  - "Certificate of completion"
+
+prerequisites:
+  - "Basic knowledge of networking, DNS and HTTP"
+  - "Familiarity with the command line in a Linux environment"
+  - "Working understanding of how email (SMTP) operates"
+  - "No prior experience with phishing campaigns is required"
+prerequisites_note: "Content is calibrated to the room during the session, going deeper according to the participants' experience and keeping the exercises close to real-world situations."
+
+requirements:
+  - "Your own workstation running Linux, macOS or Windows"
+  - "Minimum of 8GB of RAM"
+  - "Between 20GB and 30GB of free disk space"
+  - "Virtualisation enabled for the course lab"
+  - "Linux is recommended as the primary environment"
+
+instructor:
+  name: "Heitor Gouvêa"
+  bio:
+    - "Information security researcher with a background in software engineering. For nearly a decade he has worked in contexts involving data protection and application security, covering threat modeling, vulnerability identification, security tooling, and the development of practices for risk reduction."
+    - "Over his career he has worked at major Brazilian companies such as Globo and Nubank, as well as with security vendors and in applied research. As a researcher, he has reported vulnerabilities to companies and projects including Activision, MISP, D-Link and Oracle, among others."
+---
+
+<section class="block">
+  <h2 class="label">{{ t.course.objective }}</h2>
+  <p>To build the capacity to plan, run and measure a phishing campaign in an authorised engagement, from initial reconnaissance to the delivery of the report.</p>
+  <p>The course walks the full lifecycle of a campaign, treating each stage as a decision to be justified rather than a procedure to be repeated. The pretext comes out of the reconnaissance; the infrastructure comes out of the pretext; and the results only mean anything in light of both. By the end, participants should be able to run a complete campaign and defend the technical and scoping choices they made along the way.</p>
+  <p>All content is presented in the context of authorised engagements, with formal authorisation and rules of engagement agreed before any execution.</p>
+</section>

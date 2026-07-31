@@ -1,0 +1,113 @@
+locale: "pt"
+html_lang: "pt-BR"
+name: "Português"
+label: "PT"
+
+brand:
+  name: "LESIS"
+  suffix: "TRAININGS"
+
+nav:
+  courses: "Cursos"
+  schedule: "Agenda"
+
+home:
+  title: "Formação aplicada em segurança"
+  lead: >-
+    Formações práticas para quem já atua no mercado, sobre temas nichados e especializados.
+    Programas curtos, de alto rigor técnico, conduzidos por profissionais que vivem esses
+    problemas no dia a dia.
+  next_cohort: "PRÓXIMA TURMA"
+  catalog: "CATÁLOGO"
+  empty: "Nenhum treinamento agendado no momento."
+  principles: "COMO ENSINAMOS"
+  principle_1_title: "Prática sobre casos reais"
+  principle_1_body: >-
+    Os conceitos partem de problemas e casos reais da indústria e são trabalhados em exercícios
+    práticos conduzidos em sala, mantidos próximos das situações que os participantes encontram
+    no trabalho.
+  principle_2_title: "Turmas pequenas"
+  principle_2_body: >-
+    As turmas são limitadas a poucos participantes. É o que permite manter a qualidade da
+    condução, abrir espaço para discussão real e fazer com que os participantes colaborem entre
+    si ao longo dos exercícios.
+  principle_3_title: "Quem ensina"
+  principle_3_body: >-
+    Cada curso é conduzido por profissionais com autoridade no tema — pessoas que pesquisam,
+    constroem tecnologia e atuam na área, vindas tanto da indústria quanto da academia.
+  custom_title: "Treinamento para o seu time"
+  custom_body: >-
+    Desenhamos programas sob medida para times de engenharia, dados e segurança, construídos a
+    partir dos sistemas e do modelo de ameaças de cada organização.
+  custom_cta: "FALE CONOSCO"
+
+
+courses:
+  title: "Cursos"
+  empty: "Nenhum treinamento agendado no momento."
+  status_open: "INSCRIÇÕES ABERTAS"
+  status_closed: "INSCRIÇÕES ENCERRADAS"
+  status_soon: "EM BREVE"
+  details: "DETALHES DO CURSO"
+  apply: "INSCREVA-SE"
+
+schedule:
+  title: "Agenda"
+  lead: "Todos os encontros agendados, em ordem cronológica."
+  empty: "Nenhum encontro agendado no momento."
+  col_date: "DATA"
+  col_time: "HORÁRIO"
+  col_course: "CURSO"
+  col_session: "ENCONTRO"
+
+course:
+  back: "TODOS OS CURSOS"
+  objective: "OBJETIVO"
+  outcomes: "AO FINAL DO TREINAMENTO, VOCÊ SERÁ CAPAZ DE"
+  audience: "PARA QUEM É"
+  syllabus: "CONTEÚDO PROGRAMÁTICO"
+  methodology: "METODOLOGIA"
+  materials: "MATERIAL FORNECIDO"
+  prerequisites: "PRÉ-REQUISITOS"
+  requirements: "REQUISITOS TÉCNICOS"
+  instructor: "SOBRE O INSTRUTOR"
+  pricing: "INVESTIMENTO"
+  discount_html: >-
+    Podemos oferecer descontos de até 50% caso você faça parte de um grupo minoritário ou esteja em
+    situação de vulnerabilidade social e não possa pagar o valor integral. Escreva para
+    <a href="mailto:trainings@lesis.lat">trainings@lesis.lat</a> e avaliaremos caso a caso,
+    mediante disponibilidade de vaga.
+  refund: "POLÍTICA DE CANCELAMENTO E REEMBOLSO"
+  refund_intro: "O prazo para solicitação de cancelamento e o respectivo reembolso variam conforme a antecedência em relação à data de início do treinamento."
+  refund_note_title: "OBSERVAÇÃO IMPORTANTE"
+  refund_note: "Em todos os casos de cancelamento, o valor do reembolso é calculado sobre o valor total pago pela inscrição, deduzindo-se quaisquer impostos, taxas, juros ou multas cobradas pela administradora do pagamento (cartão de crédito, banco, etc.), independentemente da forma de pagamento utilizada."
+  location: "LOCAL"
+  registration: "COMO FUNCIONA A INSCRIÇÃO"
+  session: "ENCONTRO"
+  total: "TOTAL"
+  language_notice_html: >-
+    <b>Este treinamento é conduzido em português (pt-BR).</b> Todos os encontros, materiais e
+    exercícios são em português.
+
+# Política de cancelamento, compartilhada por todos os cursos pagos.
+# Renderizada quando o curso declara `refund_policy: true` no front matter.
+refund_tiers:
+  - label: "Até 61 dias ou mais antes do início"
+    value: "Reembolso de 70%"
+  - label: "Entre 46 e 60 dias antes do início"
+    value: "Reembolso de 50%"
+  - label: "Em até 45 dias antes do início"
+    value: "Sem reembolso"
+
+meta:
+  format: "FORMATO"
+  language: "IDIOMA"
+  duration: "CARGA HORÁRIA"
+  dates: "DATAS"
+  location: "LOCAL"
+  price: "INVESTIMENTO"
+  seats: "VAGAS"
+  level: "NÍVEL"
+
+footer:
+  tagline: "Laboratory of Engineering Studies in Information Security"

@@ -1,0 +1,187 @@
+---
+layout: default
+---
+{% include i18n.html %}
+{% assign status_key = 'status_' | append: page.status %}
+{% include urls.html %}
+
+<article class="course">
+  <a class="backlink" href="{{ courses_url | relative_url }}"><span aria-hidden="true">←</span> {{ t.course.back }}</a>
+
+  <header class="course-hero">
+    <span class="status status-{{ page.status }}">{{ t.courses[status_key] }}</span>
+    <h1>{{ page.heading }}</h1>
+    <p class="course-hero-lead">{{ page.subtitle }}</p>
+  </header>
+
+  <div class="course-grid">
+    <div class="course-body">
+      <p class="callout">{{ t.course.language_notice_html }}</p>
+
+      {{ content }}
+
+      {% if page.outcomes %}
+      <section class="block">
+        <h2 class="label">{{ t.course.outcomes }}</h2>
+        <ul class="rows">
+          {% for item in page.outcomes %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.audience %}
+      <section class="block">
+        <h2 class="label">{{ t.course.audience }}</h2>
+        <ul class="chips">
+          {% for item in page.audience %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.sessions %}
+      <section class="block">
+        <h2 class="label">{{ t.course.syllabus }}</h2>
+        {% assign n = 0 %}
+        {% for session in page.sessions %}
+        <div class="session">
+          {% comment %}A single undated session has nothing to label, so the head is dropped.{% endcomment %}
+          {% if page.sessions.size > 1 or session.date %}
+          <div class="session-head">
+            {% if page.sessions.size > 1 %}<span class="session-tag">{{ t.course.session }} {{ forloop.index }}</span>{% endif %}
+            {% if session.date %}<span class="session-when">{{ session.date }}{% if session.weekday %} · {{ session.weekday }}{% endif %}{% if session.time %} · {{ session.time }}{% endif %}</span>{% endif %}
+          </div>
+          {% endif %}
+          <ol class="modules">
+            {% for module in session.modules %}
+            {% comment %}A pause occupies the timeline but is not a numbered module.{% endcomment %}
+            {% if module.pause %}
+            <li class="module module-pause">
+              <span class="module-index" aria-hidden="true">·</span>
+              <div class="module-body"><h3>{{ module.title }}</h3></div>
+              <span class="module-duration">{{ module.duration }}</span>
+            </li>
+            {% else %}
+            {% assign n = n | plus: 1 %}
+            <li class="module">
+              <span class="module-index" aria-hidden="true">{{ n | prepend: '0' | slice: -2, 2 }}</span>
+              <div class="module-body">
+                <h3>{{ module.title }}</h3>
+                <ul class="topics">
+                  {% for topic in module.topics %}<li>{{ topic }}</li>{% endfor %}
+                </ul>
+              </div>
+              <span class="module-duration">{{ module.duration }}</span>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ol>
+        </div>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% assign blocks = "methodology,materials,prerequisites,requirements" | split: "," %}
+      <div class="block-pair">
+        {% for block in blocks %}
+        {% assign items = page[block] %}
+        {% if items %}
+        <section class="block">
+          <h2 class="label">{{ t.course[block] }}</h2>
+          <ul class="rows">
+            {% for item in items %}<li>{{ item }}</li>{% endfor %}
+          </ul>
+          {% if block == 'prerequisites' and page.prerequisites_note %}<p class="note">{{ page.prerequisites_note }}</p>{% endif %}
+        </section>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if page.instructor %}
+      <section class="block">
+        <h2 class="label">{{ t.course.instructor }}</h2>
+        <h3 class="instructor-name">{{ page.instructor.name }}</h3>
+        {% for paragraph in page.instructor.bio %}<p>{{ paragraph }}</p>{% endfor %}
+      </section>
+      {% endif %}
+
+      {% if page.location_note %}
+      <section class="block">
+        <h2 class="label">{{ t.course.location }}</h2>
+        <p>{{ page.location_note }}</p>
+      </section>
+      {% endif %}
+
+      {% if page.pricing or page.pricing_tiers %}
+      <section class="block">
+        <h2 class="label">{{ t.course.pricing }}</h2>
+        {% for paragraph in page.pricing %}<p>{{ paragraph }}</p>{% endfor %}
+        {% if page.pricing_tiers %}
+        <ul class="tiers">
+          {% for tier in page.pricing_tiers %}
+          <li>
+            <span class="tier-label">{{ tier.label }}</span>
+            <span class="tier-seats">{{ tier.seats }}</span>
+            <span class="tier-price">{{ tier.price }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if page.pricing_note %}<p class="note">{{ page.pricing_note }}</p>{% endif %}
+        {% if page.pricing_tiers %}<p class="callout callout-inline">{{ t.course.discount_html }}</p>{% endif %}
+      </section>
+      {% endif %}
+
+      {% if page.refund_policy %}
+      <section class="block">
+        <h2 class="label">{{ t.course.refund }}</h2>
+        <p>{{ t.course.refund_intro }}</p>
+        <ul class="terms">
+          {% for tier in t.refund_tiers %}
+          <li>
+            <span class="term-label">{{ tier.label }}</span>
+            <span class="term-value">{{ tier.value }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        <p class="callout callout-inline"><b>{{ t.course.refund_note_title }}</b> {{ t.course.refund_note }}</p>
+      </section>
+      {% endif %}
+
+      {% if page.enrollment_steps %}
+      <section class="block">
+        <h2 class="label">{{ t.course.registration }}</h2>
+        <ol class="steps">
+          {% for step in page.enrollment_steps %}
+          <li>
+            <span class="step-index" aria-hidden="true">{{ forloop.index }}</span>
+            <div>
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.body }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+        {% if page.registration_note %}<p class="note">{{ page.registration_note }}</p>{% endif %}
+      </section>
+      {% endif %}
+    </div>
+
+    <aside class="course-rail" aria-label="{{ t.courses.details }}">
+      <div class="rail">
+        <dl class="rail-meta">
+          {% for row in page.meta %}
+          <div>
+            <dt>{{ t.meta[row.key] }}</dt>
+            <dd>{{ row.value }}</dd>
+          </div>
+          {% endfor %}
+        </dl>
+
+        {% if page.registration_url %}
+        <a class="button" href="{{ page.registration_url }}" target="_blank" rel="noopener noreferrer">{{ page.registration_label | default: t.courses.apply }} <span aria-hidden="true">→</span></a>
+        {% endif %}
+        <a class="rail-email" href="mailto:trainings@lesis.lat">trainings@lesis.lat</a>
+      </div>
+    </aside>
+  </div>
+</article>

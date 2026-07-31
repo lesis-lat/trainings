@@ -1,0 +1,145 @@
+---
+layout: course
+lang: pt
+ref: data-security-engineering
+permalink: /pt/courses/data-security-engineering/
+alt_url: /courses/data-security-engineering/
+alt_lang: en
+alt_lang_key: en
+status: closed
+
+title: "Modern Data Security Engineering | LESIS Trainings"
+description: "Workshop presencial intensivo sobre segurança e privacidade aplicadas a sistemas, pipelines e plataformas de dados."
+keywords: "data security engineering, privacidade, mascaramento de dados, dados sintéticos, differential privacy, federated learning, criptografia homomórfica, treinamento, LESIS"
+
+heading: "Modern Data Security Engineering: da teoria à prática"
+subtitle: "Um workshop presencial intensivo sobre segurança e privacidade aplicadas a sistemas, pipelines e plataformas de dados."
+
+meta:
+  - key: format
+    value: "Workshop presencial"
+  - key: language
+    value: "Português (pt-BR)"
+  - key: duration
+    value: "10 horas, em dois sábados"
+  - key: dates
+    value: "18/07/2026 e 25/07/2026, 13h00 às 18h00"
+  - key: location
+    value: "Zona Sul do Rio de Janeiro"
+  - key: seats
+    value: "6 a 8 participantes"
+  - key: price
+    value: "Gratuito (primeira turma)"
+
+audience:
+  - "Engenheiros de dados"
+  - "Engenheiros de software"
+  - "Cientistas de dados"
+  - "Cientistas da computação"
+  - "Engenheiros de segurança"
+  - "Profissionais de tecnologia que trabalham com pipelines de dados"
+
+sessions:
+  - title: "Encontro 1"
+    date: "18/07/2026"
+    weekday: "Sábado"
+    time: "13h00 às 18h00"
+    modules:
+      - title: "Introdução à prática"
+        duration: "50min"
+        topics:
+          - "Fundamentos de Segurança da Informação"
+          - "Primitivas de segurança"
+          - "Modelagem de ameaças"
+      - title: "Métodos para compartilhamento de identificadores"
+        duration: "1h00"
+        topics:
+          - "Identificadores diretos e indiretos"
+          - "Caso prático: compartilhamento seguro de dados"
+          - "Vulnerabilidades comuns em estratégias de pareamento de dados"
+      - title: "Mascaramento e ofuscação de dados"
+        duration: "1h20"
+        topics:
+          - "Padrões e técnicas de mascaramento"
+          - "Caso prático: demonstração de vulnerabilidades"
+          - "Implementação de políticas de mascaramento"
+      - title: "Synthetic Data"
+        duration: "1h00"
+        topics:
+          - "Técnicas de geração de dados sintéticos"
+          - "Riscos: quando dados sintéticos expõem informações reais"
+          - "Caso prático: problemas na geração de dados de teste em grandes bases"
+          - "Ferramentas e frameworks"
+  - title: "Encontro 2"
+    date: "25/07/2026"
+    weekday: "Sábado"
+    time: "13h00 às 18h00"
+    modules:
+      - title: "Differential Privacy"
+        duration: "1h10"
+        topics:
+          - "Fundamentos matemáticos essenciais"
+          - "Implementação em pipelines de dados"
+          - "Trade-offs entre utilidade e privacidade"
+          - "Demonstração prática"
+      - title: "Federated Learning"
+        duration: "50min"
+        topics:
+          - "Conceitos fundamentais de aprendizado federado"
+          - "Arquiteturas e aplicações práticas"
+          - "Vantagens e limitações"
+      - title: "Criptografia homomórfica"
+        duration: "40min"
+        topics:
+          - "Conceitos e aplicações"
+          - "Computação sobre dados criptografados"
+          - "Limitações de performance e casos de uso"
+      - title: "Exercício prático integrador"
+        duration: "40min"
+        topics:
+          - "Implementação hands-on integrando conceitos do workshop"
+          - "Discussão de soluções e boas práticas"
+
+methodology:
+  - "Exposição de conceitos com casos reais da indústria"
+  - "Demonstrações práticas de implementação"
+  - "Discussões guiadas sobre aplicabilidade"
+  - "Análise de vulnerabilidades e soluções"
+  - "Exercício prático final"
+
+materials:
+  - "Slides"
+  - "Apostila"
+  - "Certificado de conclusão"
+
+prerequisites:
+  - "Conhecimento básico de engenharia de dados ou engenharia de software"
+  - "Familiaridade com pipelines de processamento"
+  - "Conhecimento em ao menos uma linguagem de programação: Python, PHP, JavaScript, Rust ou similar"
+prerequisites_note: "O conteúdo será ajustado ao nível da turma durante os encontros, aprofundando os temas conforme a experiência dos participantes e mantendo os exercícios próximos de situações reais."
+
+requirements:
+  - "Estação de trabalho própria com Linux, macOS ou Windows"
+  - "Configuração mínima de 8GB de memória RAM"
+  - "Entre 10GB e 20GB de espaço livre em disco"
+  - "Recomenda-se o uso de Linux como ambiente principal"
+
+instructor:
+  name: "Heitor Gouvêa"
+  bio:
+    - "Pesquisador de Segurança da Informação com background em Engenharia de Software. Há quase uma década, trabalha em contextos que envolvem proteção de dados e segurança de aplicações, passando por temas como modelagem de ameaças, identificação de vulnerabilidades, criação de ferramentas de segurança e desenvolvimento de práticas para redução de risco."
+    - "Ao longo da carreira, atuou em empresas nacionais relevantes, como Globo e Nubank, além de ter trabalhado com fornecedores de segurança e pesquisa aplicada. Como pesquisador, já reportou vulnerabilidades para empresas e projetos como Activision, MISP, D-Link, Oracle e outros."
+
+location_note: "Zona Sul do Rio de Janeiro. A localização exata será disponibilizada apenas para os participantes."
+
+pricing:
+  - "Esta primeira turma será oferecida gratuitamente, com vagas limitadas a um grupo reduzido de 6 a 8 participantes."
+  - "A proposta desta edição inicial é validar o conteúdo em sala, observar a dinâmica dos exercícios e realizar ajustes finos antes da abertura de futuras turmas com contrapartida financeira."
+
+---
+
+<section class="block">
+  <h2 class="label">{{ t.course.objective }}</h2>
+  <p>Apresentar fundamentos, técnicas e critérios de decisão para lidar com dados sensíveis em sistemas reais, conectando conceitos de segurança, privacidade e engenharia de software.</p>
+  <p>Considerando a carga horária limitada e a amplitude dos temas abordados, a proposta não é esgotar cada técnica em profundidade. O foco é construir repertório, introduzir práticas iniciais e ajudar os participantes a avaliar riscos, escolher abordagens adequadas e aprofundar os estudos com mais clareza após os encontros.</p>
+</section>

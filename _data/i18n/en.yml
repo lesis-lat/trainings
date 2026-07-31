@@ -1,0 +1,112 @@
+locale: "en"
+html_lang: "en"
+name: "English"
+label: "EN"
+
+brand:
+  name: "LESIS"
+  suffix: "TRAININGS"
+
+nav:
+  courses: "Courses"
+  schedule: "Schedule"
+
+home:
+  title: "Applied security education"
+  lead: >-
+    Hands-on training for professionals already working in the field, on niche and specialised
+    subjects. Short programs held to a high technical bar, delivered by people who work these
+    problems day to day.
+  next_cohort: "NEXT COHORT"
+  catalog: "CATALOG"
+  empty: "No trainings scheduled at the moment."
+  principles: "HOW WE TEACH"
+  principle_1_title: "Practice on real cases"
+  principle_1_body: >-
+    Concepts come from real problems and cases from industry and are worked through in hands-on
+    exercises run in the room, kept close to the situations participants meet at work.
+  principle_2_title: "Small cohorts"
+  principle_2_body: >-
+    Classes are capped at a small number of participants. That is what keeps the quality of the
+    delivery, leaves room for real discussion, and lets participants collaborate with each other
+    through the exercises.
+  principle_3_title: "Who teaches"
+  principle_3_body: >-
+    Every course is delivered by professionals with authority on the subject — people who
+    research, build technology and work in the field, from both industry and academia.
+  custom_title: "Training for your team"
+  custom_body: >-
+    We design tailored programs for engineering, data and security teams, built around the systems
+    and threat model of each organization.
+  custom_cta: "TALK TO US"
+
+
+courses:
+  title: "Courses"
+  empty: "No trainings scheduled at the moment."
+  status_open: "ENROLLMENT OPEN"
+  status_closed: "ENROLLMENT CLOSED"
+  status_soon: "COMING SOON"
+  details: "COURSE DETAILS"
+  apply: "APPLY"
+
+schedule:
+  title: "Schedule"
+  lead: "Every scheduled session, in chronological order."
+  empty: "No sessions scheduled at the moment."
+  col_date: "DATE"
+  col_time: "TIME"
+  col_course: "COURSE"
+  col_session: "SESSION"
+
+course:
+  back: "ALL COURSES"
+  objective: "OBJECTIVE"
+  outcomes: "BY THE END OF THE TRAINING, YOU WILL BE ABLE TO"
+  audience: "WHO IT IS FOR"
+  syllabus: "SYLLABUS"
+  methodology: "METHODOLOGY"
+  materials: "MATERIALS PROVIDED"
+  prerequisites: "PREREQUISITES"
+  requirements: "TECHNICAL REQUIREMENTS"
+  instructor: "INSTRUCTOR"
+  pricing: "INVESTMENT"
+  discount_html: >-
+    We can offer discounts of up to 50% if you belong to a minority group or are in a situation of
+    social vulnerability and cannot afford the full price. Write to
+    <a href="mailto:trainings@lesis.lat">trainings@lesis.lat</a> and we will assess it case by
+    case, subject to seat availability.
+  refund: "CANCELLATION AND REFUND POLICY"
+  refund_intro: "The cancellation deadline and the corresponding refund vary according to how far in advance the request is made relative to the training start date."
+  refund_note_title: "IMPORTANT NOTE"
+  refund_note: "In all cancellation cases, the refund amount is calculated on the total amount paid for the registration, less any taxes, fees, interest or penalties charged by the payment processor (credit card, bank, etc.), regardless of the payment method used."
+  location: "LOCATION"
+  registration: "HOW ENROLLMENT WORKS"
+  session: "SESSION"
+  total: "TOTAL"
+  language_notice_html: >-
+    <b>This training is delivered in Portuguese (pt-BR).</b> All sessions, materials and exercises
+    are in Portuguese.
+
+# Cancellation policy, shared by every paid course.
+# Rendered when a course declares `refund_policy: true` in its front matter.
+refund_tiers:
+  - label: "61 days or more before the start date"
+    value: "70% refund"
+  - label: "Between 46 and 60 days before the start date"
+    value: "50% refund"
+  - label: "45 days or fewer before the start date"
+    value: "No refund"
+
+meta:
+  format: "FORMAT"
+  language: "LANGUAGE"
+  duration: "DURATION"
+  dates: "DATES"
+  location: "LOCATION"
+  price: "INVESTMENT"
+  seats: "SEATS"
+  level: "LEVEL"
+
+footer:
+  tagline: "Laboratory of Engineering Studies in Information Security"

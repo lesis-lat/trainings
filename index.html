@@ -1,0 +1,50 @@
+---
+layout: default
+lang: en
+permalink: /
+alt_url: /pt/
+alt_lang: pt-BR
+alt_lang_key: pt
+title: "LESIS Trainings - Applied security education"
+description: "Hands-on security trainings taught by the instructors who do the work. Vulnerability research, offensive security and data security engineering."
+keywords: "LESIS, trainings, security training, offensive security course, vulnerability research, data security engineering, workshop"
+---
+{% include i18n.html %}
+
+<section class="hero">
+  <h1>{{ t.home.title }}</h1>
+  <p class="hero-lead">{{ t.home.lead }}</p>
+</section>
+
+{% include next-cohort.html %}
+
+<section class="section">
+  <h2 class="label">{{ t.home.catalog }}</h2>
+  {% include catalog.html %}
+</section>
+
+<section class="section">
+  <h2 class="label">{{ t.home.principles }}</h2>
+  <div class="principles">
+    <div>
+      <h3>{{ t.home.principle_1_title }}</h3>
+      <p>{{ t.home.principle_1_body }}</p>
+    </div>
+    <div>
+      <h3>{{ t.home.principle_2_title }}</h3>
+      <p>{{ t.home.principle_2_body }}</p>
+    </div>
+    <div>
+      <h3>{{ t.home.principle_3_title }}</h3>
+      <p>{{ t.home.principle_3_body }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <h2>{{ t.home.custom_title }}</h2>
+    <p>{{ t.home.custom_body }}</p>
+  </div>
+  <a class="button" href="mailto:trainings@lesis.lat">{{ t.home.custom_cta }} <span aria-hidden="true">→</span></a>
+</section>

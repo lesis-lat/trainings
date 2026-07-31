@@ -1,0 +1,16 @@
+title: LESIS Trainings
+url: "https://trainings.lesis.lat"
+baseurl: ""
+
+collections:
+  courses:
+    output: true
+    permalink: /courses/:name/
+
+exclude:
+  - Dockerfile
+  - README.md
+  - LICENSE.md
+  - SECURITY.md
+  - .editorconfig
+  - script

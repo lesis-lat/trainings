@@ -1,0 +1,24 @@
+{% comment %}
+One catalog card. Params: course, index (1-based, rendered as the mono 01/02 tab).
+{% endcomment %}
+{% assign card_status_key = 'status_' | append: include.course.status %}
+<article class="card">
+  <div class="card-top">
+    <span class="card-index" aria-hidden="true">{{ include.index | prepend: '0' | slice: -2, 2 }}</span>
+    <span class="status status-{{ include.course.status }}">{{ t.courses[card_status_key] }}</span>
+  </div>
+
+  <h3 class="card-title"><a href="{{ include.course.url | relative_url }}">{{ include.course.heading }}</a></h3>
+  <p class="card-lead">{{ include.course.subtitle }}</p>
+
+  <dl class="card-meta">
+    {% for row in include.course.meta %}
+    {% if row.key == 'duration' or row.key == 'language' or row.key == 'format' or row.key == 'dates' %}
+    <dt>{{ t.meta[row.key] }}</dt>
+    <dd>{{ row.value }}</dd>
+    {% endif %}
+    {% endfor %}
+  </dl>
+
+  <a class="card-link" href="{{ include.course.url | relative_url }}">{{ t.courses.details }} <span aria-hidden="true">→</span></a>
+</article>

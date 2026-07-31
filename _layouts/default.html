@@ -1,0 +1,16 @@
+{% include i18n.html %}
+<!DOCTYPE html>
+<html lang="{{ t.html_lang }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main" class="canvas">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  {% include analytics.html %}
+</body>
+</html>

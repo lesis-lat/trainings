@@ -1,0 +1,11 @@
+{% comment %}
+Locale bootstrap. Include at the top of every page and layout that renders
+translated strings — Jekyll renders page content before the layout wraps it, so
+`assign` from a layout is not visible to the page it wraps.
+
+Exposes:
+  lang  -> 'en' | 'pt'   (from page front matter, defaults to 'en')
+  t     -> the matching _data/i18n/<lang>.yml tree
+{% endcomment %}
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}

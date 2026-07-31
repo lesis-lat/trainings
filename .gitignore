@@ -1,0 +1,10 @@
+*.DS_Store
+_site/
+vendor/
+*.log
+*.tmp
+/newsletter-preview.png
+
+# local build
+.bundle/
+.jekyll-cache/

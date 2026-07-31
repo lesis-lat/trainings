@@ -1,0 +1,17 @@
+{% comment %}
+Locale-aware page URLs. Included by header.html and footer.html so neither
+depends on the other having run first.
+
+Exposes: home_url, courses_url, schedule_url, about_url
+{% endcomment %}
+{% if lang == 'pt' %}
+  {% assign home_url = '/pt/' %}
+  {% assign courses_url = '/pt/courses.html' %}
+  {% assign schedule_url = '/pt/schedule.html' %}
+  {% assign about_url = '/pt/about.html' %}
+{% else %}
+  {% assign home_url = '/' %}
+  {% assign courses_url = '/courses.html' %}
+  {% assign schedule_url = '/schedule.html' %}
+  {% assign about_url = '/about.html' %}
+{% endif %}

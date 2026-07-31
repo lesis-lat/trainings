@@ -1,0 +1,47 @@
+{% comment %}
+Flattens every session of every course in this locale into one chronological table.
+Sessions carry `date` as dd/mm/yyyy, so we build a yyyymmdd sort key to order them.
+{% endcomment %}
+{% assign localized = site.courses | where: "lang", lang %}
+{% assign rows = "" | split: "" %}
+
+{% for course in localized %}
+  {% for session in course.sessions %}
+    {% comment %}Courses without confirmed dates contribute no rows.{% endcomment %}
+    {% if session.date == nil or session.date == "" %}{% continue %}{% endif %}
+    {% assign parts = session.date | split: "/" %}
+    {% assign sort_key = parts[2] | append: parts[1] | append: parts[0] %}
+    {% capture row %}{{ sort_key }}|{{ session.date }}|{{ session.weekday }}|{{ session.time }}|{{ course.heading }}|{{ course.url }}|{{ forloop.index }}{% endcapture %}
+    {% assign rows = rows | push: row %}
+  {% endfor %}
+{% endfor %}
+
+{% assign rows = rows | sort %}
+
+{% if rows.size == 0 %}
+<p class="empty">{{ t.schedule.empty }}</p>
+{% else %}
+<div class="table-wrap">
+  <table class="schedule">
+    <thead>
+      <tr>
+        <th scope="col">{{ t.schedule.col_date }}</th>
+        <th scope="col">{{ t.schedule.col_time }}</th>
+        <th scope="col">{{ t.schedule.col_course }}</th>
+        <th scope="col">{{ t.schedule.col_session }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      {% assign c = row | split: "|" %}
+      <tr>
+        <td class="schedule-date">{{ c[1] }}{% if c[2] != "" %}<span class="schedule-weekday">{{ c[2] }}</span>{% endif %}</td>
+        <td class="schedule-time">{{ c[3] }}</td>
+        <td class="schedule-course"><a href="{{ c[5] | relative_url }}">{{ c[4] }}</a></td>
+        <td class="schedule-session">{{ t.course.session }} {{ c[6] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}

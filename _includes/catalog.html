@@ -1,0 +1,15 @@
+{% comment %}
+Catalog grid for the current locale. Params: limit (optional).
+{% endcomment %}
+{% assign localized = site.courses | where: "lang", lang | sort: "ref" %}
+{% if limit %}{% assign localized = localized | slice: 0, limit %}{% endif %}
+
+{% if localized.size == 0 %}
+<p class="empty">{{ t.courses.empty }}</p>
+{% else %}
+<div class="cards">
+  {% for course in localized %}
+    {% include course-card.html course=course index=forloop.index %}
+  {% endfor %}
+</div>
+{% endif %}
