@@ -907,6 +907,11 @@ img {
     white-space: nowrap;
 }
 
+.callout-lead {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
 .callout-inline {
     margin-top: 1.5rem;
 }

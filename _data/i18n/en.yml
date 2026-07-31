@@ -77,7 +77,12 @@ course:
     <a href="mailto:trainings@lesis.lat">trainings@lesis.lat</a> and we will assess it case by
     case, subject to seat availability.
   refund: "CANCELLATION AND REFUND POLICY"
-  refund_intro: "The cancellation deadline and the corresponding refund vary according to how far in advance the request is made relative to the training start date."
+  refund_withdrawal_html: >-
+    <b>Right of withdrawal.</b> Within 7 calendar days of registering you may cancel and receive
+    100% of the amount paid, with no need to give a reason. This guarantee takes precedence over
+    the tiers below.
+  refund_intro: "After that period, the refund varies according to how far in advance the request is made relative to the training start date."
+  refund_transfer: "Within 7 days of the start date, even where no refund applies, the seat can be transferred to another person or to the next cohort."
   refund_note_title: "IMPORTANT NOTE"
   refund_note: "In all cancellation cases, the refund amount is calculated on the total amount paid for the registration, less any taxes, fees, interest or penalties charged by the payment processor (credit card, bank, etc.), regardless of the payment method used."
   location: "LOCATION"
@@ -91,11 +96,11 @@ course:
 # Cancellation policy, shared by every paid course.
 # Rendered when a course declares `refund_policy: true` in its front matter.
 refund_tiers:
-  - label: "61 days or more before the start date"
-    value: "70% refund"
-  - label: "Between 46 and 60 days before the start date"
+  - label: "30 days or more before the start date"
+    value: "90% refund"
+  - label: "Between 7 and 29 days before the start date"
     value: "50% refund"
-  - label: "45 days or fewer before the start date"
+  - label: "Fewer than 7 days before the start date"
     value: "No refund"
 
 meta:

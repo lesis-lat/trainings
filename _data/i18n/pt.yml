@@ -78,7 +78,12 @@ course:
     <a href="mailto:trainings@lesis.lat">trainings@lesis.lat</a> e avaliaremos caso a caso,
     mediante disponibilidade de vaga.
   refund: "POLÍTICA DE CANCELAMENTO E REEMBOLSO"
-  refund_intro: "O prazo para solicitação de cancelamento e o respectivo reembolso variam conforme a antecedência em relação à data de início do treinamento."
+  refund_withdrawal_html: >-
+    <b>Direito de arrependimento.</b> Nos 7 dias corridos seguintes à inscrição você pode desistir
+    e receber 100% do valor pago, sem precisar justificar. Essa garantia prevalece sobre as faixas
+    abaixo.
+  refund_intro: "Passado esse prazo, o reembolso varia conforme a antecedência em relação à data de início do treinamento."
+  refund_transfer: "A menos de 7 dias do início, ainda que sem reembolso, a vaga pode ser transferida para outra pessoa ou para a turma seguinte."
   refund_note_title: "OBSERVAÇÃO IMPORTANTE"
   refund_note: "Em todos os casos de cancelamento, o valor do reembolso é calculado sobre o valor total pago pela inscrição, deduzindo-se quaisquer impostos, taxas, juros ou multas cobradas pela administradora do pagamento (cartão de crédito, banco, etc.), independentemente da forma de pagamento utilizada."
   location: "LOCAL"
@@ -92,11 +97,11 @@ course:
 # Política de cancelamento, compartilhada por todos os cursos pagos.
 # Renderizada quando o curso declara `refund_policy: true` no front matter.
 refund_tiers:
-  - label: "Até 61 dias ou mais antes do início"
-    value: "Reembolso de 70%"
-  - label: "Entre 46 e 60 dias antes do início"
+  - label: "30 dias ou mais antes do início"
+    value: "Reembolso de 90%"
+  - label: "Entre 7 e 29 dias antes do início"
     value: "Reembolso de 50%"
-  - label: "Em até 45 dias antes do início"
+  - label: "Menos de 7 dias antes do início"
     value: "Sem reembolso"
 
 meta:

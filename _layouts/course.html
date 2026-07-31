@@ -134,6 +134,7 @@ layout: default
       {% if page.refund_policy %}
       <section class="block">
         <h2 class="label">{{ t.course.refund }}</h2>
+        <p class="callout callout-inline callout-lead">{{ t.course.refund_withdrawal_html }}</p>
         <p>{{ t.course.refund_intro }}</p>
         <ul class="terms">
           {% for tier in t.refund_tiers %}
@@ -143,6 +144,7 @@ layout: default
           </li>
           {% endfor %}
         </ul>
+        <p class="note">{{ t.course.refund_transfer }}</p>
         <p class="callout callout-inline"><b>{{ t.course.refund_note_title }}</b> {{ t.course.refund_note }}</p>
       </section>
       {% endif %}

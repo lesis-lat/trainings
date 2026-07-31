@@ -19,8 +19,15 @@
 <link rel="alternate" hreflang="{{ page.alt_lang | default: 'pt-BR' }}" href="{{ site.url }}{{ page.alt_url }}">
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}{% if lang == 'en' %}{{ page.url }}{% else %}{{ page.alt_url }}{% endif %}">
 {% endif %}
-<link rel="icon" href="{{ '/assets/images/favicon-white.png' | relative_url }}" type="image/png">
-<link rel="apple-touch-icon" href="{{ '/assets/images/favicon-white.png' | relative_url }}">
+{% comment %}
+The LESIS symbol as favicon. The black mark is the default — a white glyph is
+invisible on a light tab strip — with the white one swapped in for dark mode.
+The apple-touch-icon is a filled tile: iOS composites transparency onto black
+and adds its own corner radius.
+{% endcomment %}
+<link rel="icon" href="{{ '/assets/images/favicon-light.png' | relative_url }}" type="image/png">
+<link rel="icon" href="{{ '/assets/images/favicon-dark.png' | relative_url }}" type="image/png" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
 {% assign stylesheet_version = site.time | date: '%s' %}
 <link rel="preload" href="{{ '/assets/css/style.min.css' | relative_url }}?v={{ stylesheet_version }}" as="style" onload="this.rel='stylesheet'">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
