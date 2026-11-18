@@ -12,7 +12,7 @@ permissions:
 jobs:
   baseline:
     name: Passive scan of trainings.lesis.lat
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
