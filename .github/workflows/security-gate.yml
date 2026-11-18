@@ -7,34 +7,39 @@ on:
       - develop
 
 permissions:
-  security-events: read
   contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: read
     env:
       MAX_CRITICAL: 0
       MAX_HIGH: 0
       MAX_MEDIUM: 0
       MAX_LOW: 0
-      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      SECURITY_GATE_IMAGE: ghcr.io/lesis-lat/security-gate/security-gate@sha256:6fb040227eba1d97177aa3f2e7c7a8229df439fd596a13fd9aefdf120286276d
+      REPOSITORY: ${{ github.repository }}
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v7
+      - name: Pull the security-gate image
+        run: docker pull "$SECURITY_GATE_IMAGE"
 
-    - name: Pull Docker image from GitHub Container Registry
-      run: docker pull ghcr.io/lesis-lat/security-gate/security-gate:latest
-
-    - name: Verify security alerts from GHAS
-      run: |
-        docker run ghcr.io/lesis-lat/security-gate/security-gate:latest \
-        -t "$GITHUB_TOKEN" \
-        -r "${{ github.repository }}" \
-        -c "$MAX_CRITICAL" \
-        -h "$MAX_HIGH" \
-        -m "$MAX_MEDIUM" \
-        -l "$MAX_LOW" \
-        --dependency-alerts \
-        --secret-alerts \
-        --code-alerts
+      - name: Verify security alerts from GHAS
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          docker run --rm \
+            --cap-drop ALL \
+            --security-opt no-new-privileges \
+            "$SECURITY_GATE_IMAGE" \
+            -t "$GITHUB_TOKEN" \
+            -r "$REPOSITORY" \
+            -c "$MAX_CRITICAL" \
+            -h "$MAX_HIGH" \
+            -m "$MAX_MEDIUM" \
+            -l "$MAX_LOW" \
+            --dependency-alerts \
+            --secret-alerts \
+            --code-alerts
