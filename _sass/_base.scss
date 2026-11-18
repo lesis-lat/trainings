@@ -1,0 +1,105 @@
+:root {
+    --sans: "IBM Plex Sans", sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+
+    --ink: #000;
+    --paper: #fff;
+    --muted: #555;
+    --faint: #8a8a8a;
+    --rule: #dcdcdc;
+    --wash: #f4f4f2;
+
+    --canvas: 1180px;
+    --bar: 4.6rem;
+    --gutter: 2.5rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--bar) + 1.5rem);
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Justification applies to running prose only. Chrome (nav, labels, mono
+   metadata, table headers, buttons, status flags) stays left-aligned and
+   unhyphenated — justifying single-line UI text only risks stray breaks. */
+.topbar,
+.site-footer,
+.label,
+.status,
+.button,
+.backlink,
+.card-index,
+.card-meta,
+.rail-meta,
+.schedule,
+.session-tag,
+.session-when,
+.module-index,
+.module-duration,
+.step-index,
+.chips,
+.card-link {
+    text-align: left;
+    hyphens: manual;
+}
+
+.brand,
+.topnav a,
+.schedule th {
+    text-align: left;
+}
+
+/* Headings are set left, not justified: a display heading that wraps gets its
+   first line stretched edge to edge, which reads as broken rather than as
+   typeset. Running text below is justified. */
+h1, h2, h3, h4 {
+    text-align: left;
+    hyphens: manual;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+}

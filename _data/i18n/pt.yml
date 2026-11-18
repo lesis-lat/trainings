@@ -2,6 +2,14 @@ locale: "pt"
 html_lang: "pt-BR"
 name: "Português"
 label: "PT"
+root: "/pt/"
+og_locale: "pt_BR"
+
+a11y:
+  skip: "Pular para o conteúdo"
+  main_nav: "Navegação principal"
+  languages: "Idioma"
+  current_language: "idioma atual"
 
 brand:
   name: "LESIS"
@@ -115,4 +123,5 @@ meta:
   level: "NÍVEL"
 
 footer:
+  social_prefix: "LESIS no"
   tagline: "Laboratory of Engineering Studies in Information Security"

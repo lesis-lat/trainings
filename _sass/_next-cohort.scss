@@ -1,0 +1,50 @@
+/* --------------------------------------------------------------------------
+   Next cohort band
+   -------------------------------------------------------------------------- */
+
+.cohort {
+    margin-top: 3.5rem;
+}
+
+.cohort-band {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr) auto;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2rem 2.25rem;
+    border: 1px solid var(--ink);
+}
+
+.cohort-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.cohort-date-value {
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+}
+
+.cohort-body h3 {
+    margin: 0 0 0.35rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+.cohort-body h3 a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+}
+
+.cohort-body h3 a:hover {
+    border-bottom-color: var(--ink);
+}
+
+.cohort-body p {
+    margin: 0;
+    color: var(--muted);
+}

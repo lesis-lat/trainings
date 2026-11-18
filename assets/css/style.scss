@@ -1,0 +1,26 @@
+---
+---
+
+/* ==========================================================================
+   LESIS Trainings — trainings.lesis.lat
+
+   Inherits the LESIS identity primitives only: IBM Plex Sans / IBM Plex Mono,
+   pure black on white, 1px hairlines, monospace metadata, no radius, no
+   shadows, no accent color. The layout system itself is specific to this site
+   and is built around the education flow: catalog → course → enrollment.
+   ========================================================================== */
+
+@use "fonts";
+@use "base";
+@use "top-bar";
+@use "canvas";
+@use "status-flag";
+@use "next-cohort";
+@use "catalog";
+@use "principles";
+@use "buttons";
+@use "schedule";
+@use "course";
+@use "enrollment-rail";
+@use "footer";
+@use "responsive";

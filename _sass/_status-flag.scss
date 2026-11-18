@@ -1,0 +1,26 @@
+/* --------------------------------------------------------------------------
+   Status flag
+   -------------------------------------------------------------------------- */
+
+.status {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+.status-open {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.status-closed {
+    border: 1px solid var(--rule);
+    color: var(--faint);
+}
+
+.status-soon {
+    border: 1px solid var(--ink);
+}

@@ -8,7 +8,8 @@
 <meta property="og:title" content="{{ page.title | escape }}">
 <meta property="og:description" content="{{ page.description | escape }}">
 <meta property="og:url" content="{{ site.url | escape }}{{ page.url | escape }}">
-<meta property="og:locale" content="{{ t.html_lang | replace: '-', '_' }}">
+<meta property="og:locale" content="{{ t.og_locale }}">
+<meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{ site.url }}/assets/images/SitePreview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,10 +17,15 @@
 <meta name="twitter:description" content="{{ page.description | escape }}">
 <meta name="twitter:image" content="{{ site.url }}/assets/images/SitePreview.png">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-{% if page.alt_url %}
-<link rel="alternate" hreflang="{{ t.html_lang }}" href="{{ site.url }}{{ page.url }}">
-<link rel="alternate" hreflang="{{ page.alt_lang | default: 'pt-BR' }}" href="{{ site.url }}{{ page.alt_url }}">
-<link rel="alternate" hreflang="x-default" href="{{ site.url }}{% if lang == 'en' %}{{ page.url }}{% else %}{{ page.alt_url }}{% endif %}">
+{% include translations.html %}
+{% if translations.size > 1 %}
+{% for rendering in translations %}
+<link rel="alternate" hreflang="{{ site.data.i18n[rendering.lang].html_lang }}" href="{{ site.url }}{{ rendering.url }}">
+{% if rendering.lang == site.default_lang %}<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ rendering.url }}">{% endif %}
+{% endfor %}
+{% for rendering in translations %}{% if rendering.lang != lang %}
+<meta property="og:locale:alternate" content="{{ site.data.i18n[rendering.lang].og_locale }}">
+{% endif %}{% endfor %}
 {% endif %}
 {% comment %}
 The LESIS symbol as favicon. The black mark is the default — a white glyph is
@@ -31,10 +37,10 @@ and adds its own corner radius.
 <link rel="icon" href="{{ '/assets/images/favicon-dark.png' | relative_url }}" type="image/png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
 {% assign stylesheet_version = site.time | date: '%s' %}
-<link rel="stylesheet" href="{{ '/assets/css/style.min.css' | relative_url }}?v={{ stylesheet_version }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ stylesheet_version }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 {% comment %}
-IBM Plex is self-hosted from assets/fonts (see the @font-face block in style.css),
+IBM Plex is self-hosted from assets/fonts (see the @font-face block in _sass/_fonts.scss),
 so there is no Google Fonts dependency. Preload the two faces used above the fold.
 {% endcomment %}
 <link rel="preload" href="{{ '/assets/fonts/IBM_Plex_Sans/IBMPlexSans-Light.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>

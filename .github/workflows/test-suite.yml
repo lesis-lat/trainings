@@ -26,6 +26,20 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install Node.js dependencies
+        run: npm ci
+        env:
+          npm_config_ignore_scripts: "true"
+
+      - name: Build TypeScript
+        run: npm run build
+
       - name: Build the site
         run: bundle exec jekyll build --strict_front_matter
         env:
@@ -36,9 +50,3 @@ jobs:
           bundle exec htmlproofer _site \
             --disable-external \
             --no-enforce-https
-
-      - name: Check JavaScript syntax
-        run: |
-          for source in assets/scripts/*.js; do
-            node --check "$source"
-          done

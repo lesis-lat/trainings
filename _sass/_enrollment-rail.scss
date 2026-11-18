@@ -1,0 +1,59 @@
+/* --------------------------------------------------------------------------
+   Sticky enrollment rail
+   -------------------------------------------------------------------------- */
+
+.course-rail {
+    position: sticky;
+    top: calc(var(--bar) + 2rem);
+    margin-top: 3rem;
+}
+
+.rail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid var(--ink);
+}
+
+.rail-meta {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.rail-meta > div {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.rail-meta > div:first-child {
+    padding-top: 0;
+}
+
+.rail-meta > div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.rail-meta dt {
+    color: var(--faint);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+}
+
+.rail-meta dd {
+    margin: 0;
+}
+
+.rail .button {
+    justify-content: space-between;
+}
+
+.rail-email {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--muted);
+}

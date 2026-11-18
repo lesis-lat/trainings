@@ -1,0 +1,56 @@
+/* --------------------------------------------------------------------------
+   Footer
+
+   Stacked, matching lesis.lat: black rule, social row, then three lines of
+   sans-light text. No columns, no labels.
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+    border-top: 1px solid var(--ink);
+}
+
+.site-footer-inner {
+    max-width: var(--canvas);
+    margin: 0 auto;
+    padding: 3rem var(--gutter) 4rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0 0 1.75rem;
+    padding: 0;
+    list-style: none;
+}
+
+.social-icons a {
+    color: var(--ink);
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: var(--muted);
+}
+
+.site-footer-text p {
+    margin: 0 0 1.1rem;
+    text-align: left;
+    hyphens: manual;
+}
+
+.site-footer-text p:last-child {
+    margin-bottom: 0;
+}
+
+.site-footer-text a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.site-footer-text a:hover {
+    border-bottom-color: var(--ink);
+}

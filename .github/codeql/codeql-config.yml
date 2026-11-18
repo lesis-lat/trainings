@@ -3,3 +3,4 @@ name: Trainings CodeQL configuration
 paths-ignore:
   - _site
   - assets/**/*.min.js
+  - node_modules

@@ -1,0 +1,17 @@
+{
+    "name": "lesis-trainings",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=22"
+    },
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "build": "npm run typecheck && esbuild src/scripts/main.ts --bundle --minify --format=iife --target=es2020 --outfile=assets/scripts/main.min.js",
+        "watch": "esbuild src/scripts/main.ts --bundle --format=iife --target=es2020 --outfile=assets/scripts/main.min.js --watch"
+    },
+    "devDependencies": {
+        "esbuild": "0.28.2",
+        "typescript": "7.0.2"
+    }
+}

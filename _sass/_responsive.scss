@@ -1,0 +1,134 @@
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .course-rail {
+        position: static;
+        margin-top: 2.5rem;
+    }
+
+    .rail {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .rail-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+        gap: 0 1.5rem;
+    }
+
+    .rail-email {
+        text-align: right;
+    }
+}
+
+@media (max-width: 860px) {
+    :root {
+        --gutter: 1.5rem;
+    }
+
+    .cohort-band {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    .cohort-date {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 620px) {
+    :root {
+        --bar: 4rem;
+    }
+
+    .topbar-inner {
+        gap: 1rem;
+    }
+
+    .brand-suffix {
+        display: none;
+    }
+
+    .topnav {
+        gap: 1rem;
+    }
+
+    .topnav ul {
+        gap: 1rem;
+    }
+
+    .lang-switch a,
+    .lang-switch span {
+        padding: 0.15rem 0.4rem;
+        font-size: 0.72rem;
+    }
+
+    .hero {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card-meta {
+        grid-template-columns: 1fr;
+        gap: 0 0;
+    }
+
+    .card-meta dt {
+        margin-top: 0.5rem;
+    }
+
+    .module {
+        grid-template-columns: 2.25rem minmax(0, 1fr);
+    }
+
+    .module-duration {
+        grid-column: 2;
+    }
+
+    .rail {
+        grid-template-columns: 1fr;
+    }
+
+    .rail-email {
+        text-align: center;
+    }
+
+    .button {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+/* Three locale codes plus the longest nav labels ("CALENDARIO") do not fit
+   beside the wordmark on a phone; the symbol alone carries the brand there. */
+@media (max-width: 480px) {
+    .brand-name {
+        display: none;
+    }
+
+    .nav-links a {
+        font-size: 0.74rem;
+        letter-spacing: 0.06em;
+    }
+}

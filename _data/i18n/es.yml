@@ -1,0 +1,128 @@
+locale: "es"
+html_lang: "es"
+name: "Español"
+label: "ES"
+root: "/es/"
+og_locale: "es_LA"
+
+a11y:
+  skip: "Saltar al contenido"
+  main_nav: "Navegación principal"
+  languages: "Idioma"
+  current_language: "idioma actual"
+
+brand:
+  name: "LESIS"
+  suffix: "TRAININGS"
+
+nav:
+  courses: "Cursos"
+  schedule: "Calendario"
+
+home:
+  title: "Formación aplicada en seguridad"
+  lead: >-
+    Formación práctica para quienes ya trabajan en el área, sobre temas de nicho y especializados.
+    Programas cortos, de alto rigor técnico, dictados por profesionales que enfrentan estos
+    problemas en su día a día.
+  next_cohort: "PRÓXIMA COHORTE"
+  catalog: "CATÁLOGO"
+  empty: "No hay entrenamientos programados por el momento."
+  principles: "CÓMO ENSEÑAMOS"
+  principle_1_title: "Práctica sobre casos reales"
+  principle_1_body: >-
+    Los conceptos parten de problemas y casos reales de la industria y se trabajan en ejercicios
+    prácticos guiados en el aula, siempre cerca de las situaciones que los participantes
+    encuentran en su trabajo.
+  principle_2_title: "Cohortes pequeñas"
+  principle_2_body: >-
+    Las cohortes se limitan a pocos participantes. Eso es lo que permite sostener la calidad de la
+    enseñanza, abrir espacio para una discusión real y lograr que los participantes colaboren
+    entre sí a lo largo de los ejercicios.
+  principle_3_title: "Quién enseña"
+  principle_3_body: >-
+    Cada curso está a cargo de profesionales con autoridad en el tema — personas que investigan,
+    construyen tecnología y trabajan en el área, tanto desde la industria como desde la academia.
+  custom_title: "Formación para tu equipo"
+  custom_body: >-
+    Diseñamos programas a medida para equipos de ingeniería, datos y seguridad, construidos a
+    partir de los sistemas y del modelo de amenazas de cada organización.
+  custom_cta: "HABLEMOS"
+
+
+courses:
+  title: "Cursos"
+  empty: "No hay entrenamientos programados por el momento."
+  status_open: "INSCRIPCIONES ABIERTAS"
+  status_closed: "INSCRIPCIONES CERRADAS"
+  status_soon: "PRÓXIMAMENTE"
+  details: "DETALLES DEL CURSO"
+  apply: "INSCRÍBETE"
+
+schedule:
+  title: "Calendario"
+  lead: "Todas las sesiones programadas, en orden cronológico."
+  empty: "No hay sesiones programadas por el momento."
+  col_date: "FECHA"
+  col_time: "HORARIO"
+  col_course: "CURSO"
+  col_session: "SESIÓN"
+
+course:
+  back: "TODOS LOS CURSOS"
+  objective: "OBJETIVO"
+  outcomes: "AL FINALIZAR EL ENTRENAMIENTO, PODRÁS"
+  audience: "PARA QUIÉN ES"
+  syllabus: "PROGRAMA"
+  methodology: "METODOLOGÍA"
+  materials: "MATERIAL INCLUIDO"
+  prerequisites: "REQUISITOS PREVIOS"
+  requirements: "REQUISITOS TÉCNICOS"
+  instructor: "SOBRE EL INSTRUCTOR"
+  pricing: "INVERSIÓN"
+  discount_html: >-
+    Podemos ofrecer descuentos de hasta el 50% si formas parte de un grupo minoritario o te
+    encuentras en situación de vulnerabilidad social y no puedes pagar el valor completo. Escríbenos
+    a <a href="mailto:trainings@lesis.lat">trainings@lesis.lat</a> y evaluaremos cada caso según la
+    disponibilidad de cupos.
+  refund: "POLÍTICA DE CANCELACIÓN Y REEMBOLSO"
+  refund_withdrawal_html: >-
+    <b>Derecho de arrepentimiento.</b> Dentro de los 7 días calendario posteriores a la inscripción
+    puedes desistir y recibir el 100% del monto pagado, sin necesidad de justificarlo. Esta garantía
+    prevalece sobre los plazos que siguen.
+  refund_intro: "Pasado ese plazo, el reembolso depende de la anticipación con la que se solicite respecto a la fecha de inicio del entrenamiento."
+  refund_transfer: "A menos de 7 días del inicio, aunque no corresponda reembolso, el cupo puede transferirse a otra persona o a la cohorte siguiente."
+  refund_note_title: "OBSERVACIÓN IMPORTANTE"
+  refund_note: "En todos los casos de cancelación, el monto del reembolso se calcula sobre el valor total pagado por la inscripción, descontando los impuestos, tasas, intereses o recargos cobrados por el procesador de pagos (tarjeta de crédito, banco, etc.), independientemente del medio de pago utilizado."
+  location: "LUGAR"
+  registration: "CÓMO FUNCIONA LA INSCRIPCIÓN"
+  session: "SESIÓN"
+  total: "TOTAL"
+  language_notice_html: >-
+    <b>Este entrenamiento se dicta en portugués (pt-BR).</b> Todas las sesiones, materiales y
+    ejercicios son en portugués. Si tienes dudas sobre el idioma, escríbenos a
+    <a href="mailto:trainings@lesis.lat">trainings@lesis.lat</a> antes de inscribirte.
+
+# Política de cancelación, compartida por todos los cursos pagos.
+# Se muestra cuando el curso declara `refund_policy: true` en el front matter.
+refund_tiers:
+  - label: "30 días o más antes del inicio"
+    value: "Reembolso del 90%"
+  - label: "Entre 7 y 29 días antes del inicio"
+    value: "Reembolso del 50%"
+  - label: "Menos de 7 días antes del inicio"
+    value: "Sin reembolso"
+
+meta:
+  format: "FORMATO"
+  language: "IDIOMA"
+  duration: "CARGA HORARIA"
+  dates: "FECHAS"
+  location: "LUGAR"
+  price: "INVERSIÓN"
+  seats: "CUPOS"
+  level: "NIVEL"
+
+footer:
+  social_prefix: "LESIS en"
+  tagline: "Laboratory of Engineering Studies in Information Security"

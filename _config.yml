@@ -2,10 +2,20 @@ title: LESIS Trainings
 url: "https://trainings.lesis.lat"
 baseurl: ""
 
+languages:
+  - en
+  - pt
+  - es
+default_lang: en
+
 collections:
   courses:
     output: true
     permalink: /courses/:name/
+
+sass:
+  style: compressed
+  sourcemap: development
 
 exclude:
   - Dockerfile
@@ -14,3 +24,11 @@ exclude:
   - SECURITY.md
   - .editorconfig
   - script
+  - src
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor

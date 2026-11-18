@@ -4,8 +4,8 @@ translated strings — Jekyll renders page content before the layout wraps it, s
 `assign` from a layout is not visible to the page it wraps.
 
 Exposes:
-  lang  -> 'en' | 'pt'   (from page front matter, defaults to 'en')
+  lang  -> one of `site.languages` (from page front matter, defaults to `site.default_lang`)
   t     -> the matching _data/i18n/<lang>.yml tree
 {% endcomment %}
-{% assign lang = page.lang | default: 'en' %}
+{% assign lang = page.lang | default: site.default_lang %}
 {% assign t = site.data.i18n[lang] %}

@@ -18,25 +18,38 @@ changing any styling.
 ### Running Locally
 
 ```bash
-# Install dependencies (requires Ruby >= 2.7 and Bundler)
+# Install dependencies (requires Ruby >= 2.7, Bundler and Node.js 22)
 bundle install
+npm ci
 
-# Run the development server
+# Type-check and bundle the TypeScript into assets/scripts/main.min.js
+npm run build
+
+# Run the development server (Jekyll compiles the Sass on its own)
 bundle exec jekyll serve
 
 # Access at http://localhost:4000
 ```
 
+Run `npm run watch` in a second terminal to rebuild the TypeScript on every change.
+
+Scripts are written in TypeScript under `src/scripts/` and styles in Sass under `_sass/`, with
+`assets/css/style.scss` as the entry point. The compiled `main.min.js` is not committed: CI
+builds it before every Jekyll build.
+
 ### Project Structure
 
-```
+```text
 ├── _data/i18n/      # Translation strings, one file per locale (en.yml, pt.yml)
 ├── _includes/       # header, footer, catalog, course-card, next-cohort,
 │                    # schedule-table, urls + i18n bootstrap
 ├── _layouts/        # default (shell), course (syllabus + sticky rail)
 ├── _courses/        # Course pages, one file per course per locale
-├── assets/          # CSS, JavaScript, fonts and images
+├── _sass/           # Sass partials, one per site section
+├── assets/          # Sass entry point, fonts and images
+├── src/scripts/     # TypeScript sources, bundled by esbuild
 ├── pt/              # Portuguese entry points
+├── es/              # Spanish entry points
 ├── index.html       # Home / catalog (English)
 ├── courses.html     # Course index (English)
 ├── schedule.html    # Chronological session table (English)
@@ -47,21 +60,31 @@ bundle exec jekyll serve
 
 i18n is plugin-free so the site keeps building on GitHub Pages.
 
-- English lives at `/`, Portuguese at `/pt/`.
-- Every page declares `lang: en` or `lang: pt` in its front matter.
+- English lives at `/`, Portuguese at `/pt/`, Spanish at `/es/`. The list of locales, in the
+  order the switcher shows them, is `languages` in `_config.yml`; `default_lang` is the
+  `x-default` locale.
+- Every page declares `lang: <code>` in its front matter.
 - `_includes/i18n.html` resolves `lang` and exposes `t`, the matching
   `_data/i18n/<lang>.yml` tree. **Include it at the top of every page and layout that renders
   translated strings** — Jekyll renders page content before the layout wraps it, so an `assign`
   in a layout is not visible to the page it wraps.
-- Pages point at their counterpart with `alt_url`, `alt_lang` and `alt_lang_key`. That drives
-  both the `EN`/`PT` switcher in the navigation and the `hreflang` tags.
+- Renderings of the same page share a `ref` (`home`, `courses`, `schedule`, or the course slug).
+  `_includes/translations.html` collects them, and that one list drives the `EN`/`PT`/`ES`
+  switcher, the `hreflang` and `og:locale:alternate` tags, and `sitemap.xml`. A page that exists
+  in only some locales just shows fewer entries.
+- Each locale file carries its URL `root`, `html_lang` (used for `lang` and `hreflang`) and
+  `og_locale`.
 
-To add a locale: drop a new `_data/i18n/<code>.yml`, add the entry points under `/<code>/`, and
-cross-link them with `alt_url`.
+To add a locale: drop a new `_data/i18n/<code>.yml` (copy an existing one and translate every
+value), append `<code>` to `languages`, add the entry points under `/<code>/` and one
+`_courses/<slug>.<code>.html` per course, each with the same `ref` as its counterparts.
+
+Spanish copy is neutral Latin American Spanish addressed as `tú`, matching the `você` of the
+Portuguese copy. Course delivery stays in Portuguese, and every Spanish course page says so.
 
 ### Adding a course
 
-Each course is one file per locale in `_courses/`, both sharing the same `ref`. The
+Each course is one file per locale in `_courses/`, all sharing the same `ref`. The
 `course` layout renders everything from front matter, so translating a course means
 translating values, never markup:
 
@@ -76,7 +99,7 @@ The body of the file holds only prose sections (objective, overview).
 
 **Always state the language a training is delivered in.** The `course` layout prints
 `course.language_notice_html` on every course page, and the `LANGUAGE` meta row should be filled
-in on both locales.
+in on every locale.
 
 ### Identity
 

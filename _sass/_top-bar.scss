@@ -1,0 +1,116 @@
+/* --------------------------------------------------------------------------
+   Top bar
+   -------------------------------------------------------------------------- */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--ink);
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: var(--canvas);
+    height: var(--bar);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.brand {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: auto;
+    height: 1.5rem;
+}
+
+.brand-name {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+}
+
+.brand-suffix {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    color: var(--faint);
+}
+
+.topnav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.topnav ul {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.topnav a {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.topnav a:hover {
+    border-bottom-color: var(--ink);
+}
+
+.topnav a.active {
+    border-bottom-color: var(--ink);
+}
+
+/* Language switcher: a segmented row of locale codes sharing 1px rules. The
+   current locale is a black fill, like a status flag, and is not a link. */
+.topnav .lang-switch {
+    display: flex;
+    gap: 0;
+}
+
+.lang-switch li + li {
+    margin-left: -1px;
+}
+
+.lang-switch a,
+.lang-switch span {
+    display: block;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible {
+    background: var(--wash);
+}
+
+.lang-switch [aria-current] {
+    background: var(--ink);
+    color: var(--paper);
+}

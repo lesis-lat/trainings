@@ -1,0 +1,19 @@
+{% comment %}
+One entry per locale the current page exists in. The active locale is plain
+text marked as current; the others link to their rendering of this page.
+Requires translations.html to have run.
+{% endcomment %}
+{% if translations.size > 1 %}
+<ul class="lang-switch" aria-label="{{ t.a11y.languages }}">
+  {% for rendering in translations %}
+  {% assign locale = site.data.i18n[rendering.lang] %}
+  <li>
+    {% if rendering.lang == lang %}
+    <span aria-current="true" title="{{ locale.name }} ({{ t.a11y.current_language }})">{{ locale.label }}</span>
+    {% else %}
+    <a href="{{ rendering.url | relative_url }}" lang="{{ locale.html_lang }}" hreflang="{{ locale.html_lang }}" title="{{ locale.name }}" aria-label="{{ locale.name }}">{{ locale.label }}</a>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

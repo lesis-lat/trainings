@@ -9,3 +9,7 @@ vendor/
 .bundle/
 .jekyll-cache/
 .claude/
+
+# generated assets
+node_modules/
+assets/scripts/main.min.js

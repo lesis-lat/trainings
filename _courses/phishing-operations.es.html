@@ -1,0 +1,165 @@
+---
+layout: course
+lang: es
+ref: phishing-operations
+permalink: /es/courses/phishing-operations/
+status: soon
+
+title: "Phishing operations | LESIS Trainings"
+description: "Taller intensivo de un día sobre planificación, ejecución y medición de campañas de phishing en evaluaciones autorizadas. Se dicta en portugués (pt-BR)."
+keywords: "phishing, spear phishing, red team, ingeniería social, gophish, evilginx, clickfix, campaña de phishing, entrenamiento, LESIS"
+
+heading: "Phishing operations: from zero to one"
+subtitle: "Un taller intensivo de un día sobre planificación, ejecución y medición de campañas de phishing en evaluaciones autorizadas."
+
+meta:
+  - key: format
+    value: "Taller intensivo"
+  - key: language
+    value: "Portugués (pt-BR)"
+  - key: duration
+    value: "6 horas, en un solo día"
+  - key: dates
+    value: "21/11/2026, de 13:00 a 19:30 (hora de Brasilia)"
+  - key: seats
+    value: "Mínimo 5, máximo 10"
+  - key: price
+    value: "Desde R$ 500"
+
+pricing:
+  - "El valor es progresivo según el orden de confirmación de la inscripción. Cada lote se cierra cuando se completan sus cupos, y pasa a regir el siguiente."
+  - "Los valores están expresados en reales brasileños (BRL)."
+pricing_note: "La cohorte solo se confirma con un mínimo de 5 participantes."
+refund_policy: true
+pricing_tiers:
+  - label: "Lote 1"
+    seats: "3 cupos"
+    price: "R$ 500"
+  - label: "Lote 2"
+    seats: "5 cupos"
+    price: "R$ 800"
+  - label: "Lote 3"
+    seats: "2 cupos"
+    price: "R$ 900"
+
+outcomes:
+  - "Planificar una campaña a partir del reconocimiento del objetivo, y no de una plantilla prearmada"
+  - "Recolectar y validar direcciones de correo sin alertar a la organización evaluada"
+  - "Montar y proteger la infraestructura de una campaña: dominios, autenticación de correo, landing pages y redirectors"
+  - "Conducir una campaña completa con GoPhish, desde el envío hasta el seguimiento"
+  - "Construir pretextos de spear phishing y evaluar técnicas que dependen de una acción del usuario"
+  - "Demostrar el impacto de eludir el 2FA mediante la captura de sesión, dentro de los límites del alcance"
+  - "Elegir e interpretar métricas de campaña, y redactar un informe que respalde las decisiones tomadas"
+
+audience:
+  - "Pentesters y red teamers"
+  - "Ingenieros de seguridad ofensiva"
+  - "Analistas de respuesta a incidentes"
+  - "Equipos que contratan o evalúan simulaciones de phishing"
+  - "Profesionales a cargo de programas de concientización"
+
+sessions:
+  - title: "Sesión única"
+    date: "21/11/2026"
+    weekday: "Sábado"
+    time: "13:00 a 19:30"
+    modules:
+      - title: "Fundamentos y encuadre"
+        duration: "30min"
+        topics:
+          - "Qué es el phishing y en qué se diferencia de otras técnicas de ingeniería social"
+          - "Anatomía de una campaña: pretexto, vector y objetivo"
+          - "Ejemplos reales y qué hizo funcionar a cada uno"
+          - "Alcance, autorización formal y reglas de compromiso"
+      - title: "Reconocimiento del objetivo y recolección de direcciones"
+        duration: "1h00"
+        topics:
+          - "Superficie pública de la organización: personas, tecnologías y proveedores"
+          - "Lenguaje interno, procesos y calendario como materia prima del pretexto"
+          - "Identificación de los controles de correo y del proveedor en uso"
+          - "Fuentes de direcciones, patrones de nomenclatura corporativa y datos de filtraciones"
+          - "Validación de direcciones sin alertar al objetivo"
+          - "Cómo el reconocimiento determina el enfoque, y no al revés"
+      - title: "Infraestructura de campaña"
+        duration: "1h00"
+        topics:
+          - "Elección, aging y categorización de dominios"
+          - "Dominios lookalike y cómo los lee el objetivo"
+          - "SPF, DKIM y DMARC desde la perspectiva de quien envía"
+          - "Entregabilidad: por qué el mensaje llega, o no llega"
+          - "Hosting de la landing page, TLS y redirectors"
+      - title: "Pausa para café"
+        duration: "30min"
+        pause: true
+      - title: "Protección de la infraestructura"
+        duration: "30min"
+        topics:
+          - "Filtrado de tráfico: quién puede ver la landing page"
+          - "Evasión de crawlers, sandboxes y servicios de análisis de URL"
+          - "Separación entre envío y captura, y cierre de la evaluación"
+      - title: "Ejecución y distribución con GoPhish"
+        duration: "50min"
+        topics:
+          - "Modelado de campañas, plantillas y landing pages"
+          - "Instrumentación y seguimiento de eventos"
+          - "Ventanas de envío, ritmo y segmentación"
+          - "Seguimiento de la campaña en curso"
+      - title: "Spear phishing, ClickFix y evasión del 2FA"
+        duration: "1h00"
+        topics:
+          - "Spear phishing: un pretexto a medida a partir del reconocimiento"
+          - "ClickFix y técnicas que dependen de una acción del usuario"
+          - "Evilginx: proxy reverso y captura de sesión"
+          - "Qué cambia la evasión del 2FA en el modelo de amenazas de la organización"
+      - title: "Impacto, métricas e informe"
+        duration: "40min"
+        topics:
+          - "Demostración de impacto dentro de los límites del alcance"
+          - "Métricas de entrega, clic, envío de datos y sesión — y lo que cada una dice realmente"
+          - "Tasa de reporte y lo que revela sobre la organización"
+          - "Estructura del informe: narrativa, evidencia y devolución"
+      - title: "Ejercicio integrador"
+        duration: "30min"
+        topics:
+          - "Campaña de punta a punta en un entorno controlado"
+          - "Discusión de las decisiones tomadas y de las alternativas descartadas"
+
+methodology:
+  - "Exposición de conceptos a partir de campañas reales de la industria"
+  - "Demostraciones prácticas de montaje y protección de infraestructura"
+  - "Discusiones guiadas sobre alcance, autorización y límites de la evaluación"
+  - "Análisis de lo que hizo funcionar o fracasar a campañas reales"
+  - "Ejercicio práctico final de punta a punta"
+
+materials:
+  - "Diapositivas"
+  - "Guía de estudio"
+  - "Certificado de finalización"
+
+prerequisites:
+  - "Conocimientos básicos de redes, DNS y HTTP"
+  - "Familiaridad con la línea de comandos en entornos Linux"
+  - "Nociones de cómo funciona el correo electrónico (SMTP)"
+  - "No se requiere experiencia previa con campañas de phishing"
+prerequisites_note: "El contenido se ajustará al nivel de la cohorte durante la sesión, profundizando los temas según la experiencia de los participantes y manteniendo los ejercicios cerca de situaciones reales."
+
+requirements:
+  - "Equipo propio con Linux, macOS o Windows"
+  - "Mínimo de 8GB de memoria RAM"
+  - "Entre 20GB y 30GB de espacio libre en disco"
+  - "Virtualización habilitada para el laboratorio del curso"
+  - "Se recomienda Linux como entorno principal"
+
+instructor:
+  name: "Heitor Gouvêa"
+  bio:
+    - "Investigador en Seguridad de la Información con formación en Ingeniería de Software. Desde hace casi una década trabaja en contextos que involucran protección de datos y seguridad de aplicaciones, abarcando temas como modelado de amenazas, identificación de vulnerabilidades, desarrollo de herramientas de seguridad y creación de prácticas para la reducción de riesgos."
+    - "A lo largo de su carrera trabajó en importantes empresas brasileñas, como Globo y Nubank, además de colaborar con proveedores de seguridad y en investigación aplicada. Como investigador, reportó vulnerabilidades a empresas y proyectos como Activision, MISP, D-Link y Oracle, entre otros."
+---
+
+<section class="block">
+  <h2 class="label">{{ t.course.objective }}</h2>
+  <p>Desarrollar la capacidad de planificar, ejecutar y medir una campaña de phishing en una evaluación autorizada, desde el reconocimiento inicial hasta la entrega del informe.</p>
+  <p>El curso recorre el ciclo completo de una campaña tratando cada etapa como una decisión que debe justificarse, y no como un procedimiento a repetir. La elección del pretexto nace del reconocimiento; la infraestructura nace del pretexto; y la lectura de los resultados solo tiene sentido a la luz de ambos. Al final, se espera que el participante pueda conducir una campaña completa y defender las decisiones técnicas y de alcance que tomó en el camino.</p>
+  <p>Todo el contenido se presenta en el contexto de evaluaciones autorizadas, con autorización formal y reglas de compromiso definidas antes de cualquier ejecución.</p>
+</section>

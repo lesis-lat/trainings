@@ -1,0 +1,14 @@
+{% comment %}
+Every rendering of the current page across locales, in the order of
+`site.languages`. Pages and courses opt in by sharing a `ref` in front matter.
+
+Exposes: translations -> array of pages/documents (includes the current one)
+{% endcomment %}
+{% assign translations = "" | split: "" %}
+{% if page.ref %}
+  {% assign same_ref = site.pages | concat: site.courses | where: "ref", page.ref %}
+  {% for code in site.languages %}
+    {% assign rendering = same_ref | where: "lang", code | first %}
+    {% if rendering %}{% assign translations = translations | push: rendering %}{% endif %}
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,340 @@
+/* --------------------------------------------------------------------------
+   Course page
+   -------------------------------------------------------------------------- */
+
+.backlink {
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--faint);
+}
+
+.backlink:hover {
+    color: var(--ink);
+}
+
+.course-hero {
+    padding: 1.5rem 0 2.5rem;
+    border-bottom: 1px solid var(--ink);
+}
+
+.course-hero .status {
+    margin-bottom: 1.25rem;
+}
+
+.course-hero h1 {
+    margin: 0 0 0.75rem;
+    max-width: 22em;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.course-hero-lead {
+    margin: 0;
+    max-width: 44em;
+    font-size: 1.05rem;
+    color: var(--muted);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    gap: 4rem;
+    align-items: start;
+}
+
+.course-body > .block:first-of-type {
+    margin-top: 3rem;
+}
+
+.block {
+    margin-top: 3.5rem;
+}
+
+.block p {
+    margin: 0 0 0.9rem;
+}
+
+.block p:last-child {
+    margin-bottom: 0;
+}
+
+.callout {
+    margin: 2.5rem 0 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--ink);
+    background: var(--wash);
+}
+
+.note {
+    margin-top: 1.25rem !important;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Audience chips */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chips li {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+}
+
+/* Syllabus */
+.session + .session {
+    margin-top: 3rem;
+}
+
+.session-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.session-tag {
+    padding: 0.15rem 0.5rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.session-when {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.modules {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.module {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr) auto;
+    gap: 1rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.module:first-child {
+    border-top: 1px solid var(--rule);
+}
+
+/* A scheduled pause: present in the timeline, visibly not a module. */
+.module-pause,
+.module-pause h3 {
+    color: var(--faint);
+}
+
+.module-pause h3 {
+    margin-bottom: 0;
+}
+
+.module-index,
+.module-duration {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+}
+
+.module-index {
+    color: var(--faint);
+}
+
+.module-duration {
+    color: var(--faint);
+    white-space: nowrap;
+}
+
+.module-body h3 {
+    margin: 0 0 0.4rem;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.topics {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+}
+
+.topics li {
+    padding: 0.1rem 0;
+}
+
+.topics li::before {
+    content: "— ";
+    color: var(--faint);
+}
+
+/* Paired list blocks */
+.block-pair {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    column-gap: 3rem;
+}
+
+.rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.rows li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.rows li:first-child {
+    border-top: 1px solid var(--rule);
+}
+
+/* Price ladder: label, seats, amount. Mono throughout, amount right-aligned
+   so the column reads as a column. */
+.tiers {
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tiers li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto 6rem;
+    gap: 1.5rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.tiers li:first-child {
+    border-top: 1px solid var(--rule);
+}
+
+.tier-label {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.tier-seats {
+    color: var(--faint);
+}
+
+.tier-price {
+    text-align: right;
+}
+
+/* Two-column terms ladder (cancellation windows). Same vocabulary as .tiers. */
+.terms {
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.terms li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.terms li:first-child {
+    border-top: 1px solid var(--rule);
+}
+
+.term-value {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.callout-lead {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.callout-inline {
+    margin-top: 1.5rem;
+}
+
+.instructor-name {
+    margin: 0 0 0.6rem;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Enrollment steps */
+.steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.steps li {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.steps li:first-child {
+    border-top: 1px solid var(--rule);
+}
+
+.step-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 0.85rem;
+}
+
+.steps h3 {
+    margin: 0 0 0.25rem;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.steps p {
+    margin: 0;
+    color: var(--muted);
+}

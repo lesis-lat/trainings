@@ -2,6 +2,14 @@ locale: "en"
 html_lang: "en"
 name: "English"
 label: "EN"
+root: "/"
+og_locale: "en_US"
+
+a11y:
+  skip: "Skip to content"
+  main_nav: "Main navigation"
+  languages: "Language"
+  current_language: "current language"
 
 brand:
   name: "LESIS"
@@ -114,4 +122,5 @@ meta:
   level: "LEVEL"
 
 footer:
+  social_prefix: "LESIS on"
   tagline: "Laboratory of Engineering Studies in Information Security"

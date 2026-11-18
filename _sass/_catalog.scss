@@ -1,0 +1,88 @@
+/* --------------------------------------------------------------------------
+   Catalog cards
+   -------------------------------------------------------------------------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    border: 1px solid var(--rule);
+    transition: border-color 0.2s;
+}
+
+.card:hover {
+    border-color: var(--ink);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-index {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    color: var(--faint);
+}
+
+.card-title {
+    margin: 0 0 0.5rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+.card-title a {
+    text-decoration: none;
+}
+
+.card-title a {
+    border-bottom: 1px solid var(--rule);
+}
+
+.card-title a:hover {
+    border-bottom-color: var(--ink);
+}
+
+.card-lead {
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+}
+
+.card-meta {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 0.35rem 1rem;
+    margin: 0 0 1.75rem;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.card-meta dt {
+    color: var(--faint);
+}
+
+.card-meta dd {
+    margin: 0;
+}
+
+.card-link {
+    margin-top: auto;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    align-self: flex-start;
+    padding-bottom: 2px;
+}

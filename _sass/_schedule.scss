@@ -1,0 +1,56 @@
+/* --------------------------------------------------------------------------
+   Schedule table
+   -------------------------------------------------------------------------- */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.schedule {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.schedule th {
+    padding: 0 0 0.75rem;
+    border-bottom: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--faint);
+    text-align: left;
+}
+
+.schedule td {
+    padding: 1.1rem 1.5rem 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: baseline;
+}
+
+.schedule-date,
+.schedule-time,
+.schedule-session {
+    font-family: var(--mono);
+    white-space: nowrap;
+}
+
+.schedule-weekday {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--faint);
+}
+
+.schedule-session {
+    color: var(--faint);
+}
+
+.schedule-course a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+}
+
+.schedule-course a:hover {
+    border-bottom-color: var(--ink);
+}

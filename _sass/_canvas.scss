@@ -1,0 +1,81 @@
+/* --------------------------------------------------------------------------
+   Canvas and section rhythm
+   -------------------------------------------------------------------------- */
+
+.canvas {
+    max-width: var(--canvas);
+    margin: 0 auto;
+    padding: 0 var(--gutter) 6rem;
+}
+
+.hero {
+    padding: 4.5rem 0 1rem;
+}
+
+.hero-sm {
+    padding: 3.5rem 0 1.5rem;
+}
+
+/* A sub-page heading leads straight into its content — it does not need the
+   full section rhythm the home page uses between blocks. */
+.hero-sm + .section {
+    margin-top: 1rem;
+}
+
+/* No lead paragraph under the heading means its bottom margin is dangling. */
+.hero h1:last-child {
+    margin-bottom: 0;
+}
+
+/* The heading gets the full canvas so short titles hold one line; the measure
+   constraint lives on the lead paragraph, where it is about readability. */
+.hero h1 {
+    margin: 0 0 1rem;
+    max-width: 20em;
+    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+/* No hyphenation in the lead: it is the most-read paragraph on the site and a
+   broken word reads as a defect at this size. Narrow columns elsewhere still
+   hyphenate, where it keeps justified text from opening rivers. */
+.hero-lead {
+    margin: 0;
+    max-width: 42em;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--muted);
+    hyphens: manual;
+}
+
+.section {
+    margin-top: 4.5rem;
+}
+
+/* Section label: mono caps followed by a hairline that fills the row. */
+.label {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 0 0 1.75rem;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+}
+
+.empty {
+    padding: 2rem 0;
+    color: var(--muted);
+}

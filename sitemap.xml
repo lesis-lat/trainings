@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% assign localized = site.pages | concat: site.courses | where_exp: "item", "item.ref" %}
+{% for code in site.languages %}{% assign in_locale = localized | where: "lang", code | sort: "url" %}{% for entry in in_locale %}
+  <url>
+    <loc>{{ site.url }}{{ entry.url }}</loc>
+    {% assign same_ref = localized | where: "ref", entry.ref %}{% for code_alt in site.languages %}{% assign rendering = same_ref | where: "lang", code_alt | first %}{% if rendering %}
+    <xhtml:link rel="alternate" hreflang="{{ site.data.i18n[code_alt].html_lang }}" href="{{ site.url }}{{ rendering.url }}"/>{% if code_alt == site.default_lang %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ rendering.url }}"/>{% endif %}{% endif %}{% endfor %}
+  </url>{% endfor %}{% endfor %}
+</urlset>
