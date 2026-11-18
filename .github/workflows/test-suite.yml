@@ -17,10 +17,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@20eb24b0d509e2b9ed9b6d42ddfeb992915e0564 # v1.341.0
         with:
           bundler-cache: true
 
@@ -29,12 +31,9 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Install HTML-Proofer
-        run: gem install html-proofer --version 5.0.10 --no-document
-
       - name: Check links, images and scripts
         run: |
-          htmlproofer _site \
+          bundle exec htmlproofer _site \
             --disable-external \
             --no-enforce-https
 
