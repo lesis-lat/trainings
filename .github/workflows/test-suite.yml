@@ -1,0 +1,45 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Build the site
+        run: bundle exec jekyll build --strict_front_matter
+        env:
+          JEKYLL_ENV: production
+
+      - name: Install HTML-Proofer
+        run: gem install html-proofer --version 5.0.10 --no-document
+
+      - name: Check links, images and scripts
+        run: |
+          htmlproofer _site \
+            --disable-external \
+            --no-enforce-https
+
+      - name: Check JavaScript syntax
+        run: |
+          for source in assets/scripts/*.js; do
+            node --check "$source"
+          done

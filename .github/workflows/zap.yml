@@ -1,0 +1,28 @@
+name: OWASP ZAP Baseline
+
+on:
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  baseline:
+    name: Passive scan of trainings.lesis.lat
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Run the ZAP baseline scan
+        uses: zaproxy/action-baseline@v0.15.0
+        with:
+          target: https://trainings.lesis.lat
+          rules_file_name: .zap/rules.tsv
+          issue_title: OWASP ZAP baseline report
+          fail_action: false
+          artifact_name: zap-baseline-report

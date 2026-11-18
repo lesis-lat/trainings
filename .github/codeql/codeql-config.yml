@@ -1,0 +1,5 @@
+name: Trainings CodeQL configuration
+
+paths-ignore:
+  - _site
+  - assets/**/*.min.js

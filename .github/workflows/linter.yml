@@ -1,0 +1,64 @@
+name: Linter
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  workflows:
+    name: GitHub Actions workflows
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Run actionlint
+        uses: docker://rhysd/actionlint:1.7.12
+        with:
+          args: -color
+
+  markdown:
+    name: Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: List the Markdown files to lint
+        id: files
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          base="$BEFORE_SHA"
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            base="$BASE_SHA"
+          fi
+
+          git diff --name-only --diff-filter=ACMR "$base" HEAD -- '*.md' > changed-markdown.txt || true
+
+          if [ -s changed-markdown.txt ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+          cat changed-markdown.txt
+
+      - name: Set up Node.js
+        if: steps.files.outputs.changed == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Run markdownlint
+        if: steps.files.outputs.changed == 'true'
+        run: xargs --delimiter '\n' npx --yes markdownlint-cli2@0.18.1 < changed-markdown.txt

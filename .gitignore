@@ -8,3 +8,4 @@ vendor/
 # local build
 .bundle/
 .jekyll-cache/
+.claude/
